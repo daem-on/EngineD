@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2uistate>
+    <!--This is a UI state file - its content describes the user interface settings when the project was last open.
+It is entirely optional and the project will load without it.  If you are placing the project under source control,
+you probably do not want to add any .uistate.xml files to the repository.-->
+    <configurations>
+        <active>
+            <configuration name="HTML5" />
+        </active>
+        <display name="HTML5" />
+    </configurations>
+    <open-tabs>
+        <layout order="0">Map 1</layout>
+        <layout order="3">Fight</layout>
+        <layout order="5">Menu</layout>
+        <layout order="7">Options</layout>
+        <event-sheet order="2">Base</event-sheet>
+        <event-sheet active="1" order="4">Fight Events</event-sheet>
+        <event-sheet order="1">Sheet 1</event-sheet>
+        <event-sheet order="6">Menu Events</event-sheet>
+        <event-sheet order="8">Options Events</event-sheet>
+    </open-tabs>
+    <properties>
+        <property expanded="1" name="About" />
+        <property expanded="1" name="Project settings" />
+        <property expanded="0" name="Window Size" />
+        <property expanded="1" name="Configuration Settings" />
+    </properties>
+    <families-expanded root="1">
+        <family expanded="1" name="IsoObject" />
+    </families-expanded>
+    <folders-expanded>
+        <folder expanded="1" path="object-folder/" />
+        <folder expanded="1" path="object-folder/Map/" />
+        <folder expanded="1" path="layout-folder/" />
+        <folder expanded="1" path="event-folder/" />
+        <folder expanded="1" path="file-folder/" />
+        <folder expanded="1" path="sound-folder/" />
+        <folder expanded="1" path="music-folder/" />
+        <folder expanded="1" path="file-folder/Icons/" />
+        <folder expanded="1" path="animation-folder/Anvil/" />
+        <folder expanded="1" path="animation-folder/Bags/" />
+        <folder expanded="1" path="animation-folder/Boat/" />
+        <folder expanded="1" path="animation-folder/Bridge/" />
+        <folder expanded="1" path="animation-folder/BridgeVert/" />
+        <folder expanded="1" path="animation-folder/Clothes/" />
+        <folder expanded="1" path="animation-folder/Crates/" />
+        <folder expanded="1" path="animation-folder/House/" />
+        <folder expanded="1" path="animation-folder/Logs/" />
+        <folder expanded="1" path="animation-folder/Post/" />
+        <folder expanded="1" path="animation-folder/SignPoint/" />
+        <folder expanded="1" path="animation-folder/Tree/" />
+        <folder expanded="1" path="animation-folder/TreeB/" />
+        <folder expanded="1" path="animation-folder/WheatBag/" />
+        <folder expanded="1" path="animation-folder/Player/" />
+        <folder expanded="1" path="animation-folder/Player/Walk/" />
+        <folder expanded="1" path="animation-folder/Player/Idle/" />
+        <folder expanded="1" path="animation-folder/Scroll/" />
+        <folder expanded="1" path="animation-folder/Barrier/" />
+        <folder expanded="1" path="animation-folder/PlayerFight/" />
+        <folder expanded="1" path="animation-folder/TreeC/" />
+        <folder expanded="1" path="animation-folder/SnakeBite/" />
+        <folder expanded="1" path="animation-folder/Slime/" />
+        <folder expanded="1" path="animation-folder/BarBack/" />
+        <folder expanded="1" path="animation-folder/RedBar/" />
+        <folder expanded="1" path="animation-folder/BlueBar/" />
+        <folder expanded="1" path="animation-folder/lpcwhite/" />
+        <folder expanded="1" path="animation-folder/EngineDWhite/" />
+        <folder expanded="1" path="animation-folder/Fire/" />
+        <folder expanded="1" path="animation-folder/Readable/" />
+        <folder expanded="1" path="animation-folder/Collision/" />
+        <folder expanded="1" path="animation-folder/Read/" />
+        <folder expanded="1" path="animation-folder/DarkBack/" />
+    </folders-expanded>
+</c2uistate>

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Options Events</name>
+    <events>
+        <variable constant="0" name="Source" sid="8299951834800127" static="0" type="text"></variable>
+        <event-block sid="4131064866497736">
+            <conditions>
+                <condition id="17" name="On tap object" sid="8341353179163703" type="Touch">
+                    <param id="0" name="Object">SeamlessText</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="6888784798059056">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="7740055522813704" type="System">
+                            <param id="0" name="Variable">Source</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;menu&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="9862999315224042" type="System">
+                            <param id="0" name="Layout">Menu</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3771916814625733">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="2852788882705069" type="System">
+                            <param id="0" name="Variable">Source</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;pause&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="5243667694215785" type="System">
+                            <param id="0" name="Layout">Map 1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

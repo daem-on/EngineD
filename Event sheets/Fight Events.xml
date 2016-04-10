@@ -1,0 +1,692 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Fight Events</name>
+    <events>
+        <variable constant="0" name="Enemy" sid="3852695665299086" static="0" type="text">Slime</variable>
+        <variable constant="0" name="PlayerHealth" sid="7899819962090397" static="0" type="number">100</variable>
+        <variable constant="0" name="PlayerMax" sid="712287322723394" static="0" type="number">100</variable>
+        <variable constant="0" name="EnemyHealth" sid="3283673283045541" static="0" type="number">50</variable>
+        <variable constant="0" name="EnemyMax" sid="5727314162506772" static="0" type="number">50</variable>
+        <variable constant="0" name="Turn" sid="470376616292399" static="0" type="number">1</variable>
+        <event-block sid="8246335495064904">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="996977804836506" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="7757227169449307" type="System">
+                    <param id="0" name="Variable">Turn</param>
+                    <param id="1" name="Value">2</param>
+                </action>
+                <action id="-15" name="Set visible" sid="3215888611855183" type="Won">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="0" name="Set text" sid="2597375541582638" type="Won">
+                    <param id="0" name="Text">&quot;A wild &quot; &amp; Enemy &amp; &quot; appeared!&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="62795991300598" type="System">
+                    <param id="0" name="Seconds">3.0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="701957571207375" type="Won">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="2531586040042095" type="System">
+                    <param id="0" name="Variable">Turn</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4808486071264268">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="9624826993910407" type="System">
+                    <param id="0" name="Variable">Turn</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Set group active" sid="1740501007046781" type="System">
+                    <param id="0" name="Group name">&quot;Player Turn&quot;</param>
+                    <param id="1" name="State">0</param>
+                </action>
+                <action id="-12" name="Set group active" sid="2992356869215049" type="System">
+                    <param id="0" name="Group name">&quot;Enemy Turn&quot;</param>
+                    <param id="1" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8407591752254547">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="6773577971680205" type="System">
+                    <param id="0" name="Variable">Turn</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Set group active" sid="7667792026885134" type="System">
+                    <param id="0" name="Group name">&quot;Player Turn&quot;</param>
+                    <param id="1" name="State">1</param>
+                </action>
+                <action id="-12" name="Set group active" sid="7889095387696818" type="System">
+                    <param id="0" name="Group name">&quot;Enemy Turn&quot;</param>
+                    <param id="1" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="333637981662918">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="2373434729719627" type="System">
+                    <param id="0" name="Variable">Turn</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Set group active" sid="3508053769556646" type="System">
+                    <param id="0" name="Group name">&quot;Player Turn&quot;</param>
+                    <param id="1" name="State">0</param>
+                </action>
+                <action id="-12" name="Set group active" sid="1574679911882742" type="System">
+                    <param id="0" name="Group name">&quot;Enemy Turn&quot;</param>
+                    <param id="1" name="State">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="2890883300383145" type="System">
+                    <param id="0" name="Layer">1</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6762488796815204">
+            <conditions>
+                <condition id="0" name="On function" sid="3367050748790667" type="Function">
+                    <param id="0" name="Name">&quot;DamageEnemy&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="1830013185984859" type="System">
+                    <param id="0" name="Variable">EnemyHealth</param>
+                    <param id="1" name="Value">Function.Param(0)</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="737775901495612">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="6978303908895706" type="System">
+                            <param id="0" name="Variable">Enemy</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;Slime&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="3120696555820004" type="Slime">
+                            <param id="0" name="Object">DamageText</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">1</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="3467086236546883" type="DamageText">
+                            <param id="0" name="Angle">-90</param>
+                        </action>
+                        <action id="0" name="Set text" sid="753183194142071" type="DamageText">
+                            <param id="0" name="Text">&quot;-&quot; &amp; Function.Param(0)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="4847630092227049">
+            <conditions>
+                <condition id="0" name="On function" sid="3659082956802479" type="Function">
+                    <param id="0" name="Name">&quot;HealEnemy&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="3346808175890741" type="System">
+                    <param id="0" name="Variable">EnemyHealth</param>
+                    <param id="1" name="Value">Function.Param(0)</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="9491924411042855">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="2236821971570817" type="System">
+                            <param id="0" name="Variable">Enemy</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;Slime&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="9467803970969406" type="Slime">
+                            <param id="0" name="Object">HealText</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">1</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="9580326880105973" type="HealText">
+                            <param id="0" name="Angle">-90</param>
+                        </action>
+                        <action id="0" name="Set text" sid="7544440908143575" type="HealText">
+                            <param id="0" name="Text">&quot;+&quot; &amp; Function.Param(0)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="6657472334232983">
+            <conditions>
+                <condition id="0" name="On function" sid="9662049299187903" type="Function">
+                    <param id="0" name="Name">&quot;DamagePlayer&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="3290566279000614" type="System">
+                    <param id="0" name="Variable">PlayerHealth</param>
+                    <param id="1" name="Value">Function.Param(0)</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="3689456245072609" type="PlayerFight">
+                    <param id="0" name="Object">DamageText</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="7561676928171623" type="DamageText">
+                    <param id="0" name="Angle">-90</param>
+                </action>
+                <action id="0" name="Set text" sid="244030344849371" type="DamageText">
+                    <param id="0" name="Text">&quot;-&quot; &amp; Function.Param(0)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2310994780910506">
+            <conditions>
+                <condition id="0" name="On function" sid="1301215177230766" type="Function">
+                    <param id="0" name="Name">&quot;HealPlayer&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="1648597021293859" type="System">
+                    <param id="0" name="Variable">PlayerHealth</param>
+                    <param id="1" name="Value">Function.Param(0)</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="1320829487654609" type="PlayerFight">
+                    <param id="0" name="Object">HealText</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="5851412802216175" type="HealText">
+                    <param id="0" name="Angle">-90</param>
+                </action>
+                <action id="0" name="Set text" sid="4292200598005441" type="HealText">
+                    <param id="0" name="Text">&quot;+&quot; &amp; Function.Param(0)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5620919064049392">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="7667592622850231" type="System" />
+            </conditions>
+            <actions>
+                <action id="-5" name="Set width" sid="7204382340668802" type="BlueBar">
+                    <param id="0" name="Width">EnemyHealth / EnemyMax * 100</param>
+                </action>
+                <action id="0" name="Set text" sid="7406239494595461" type="EnemyHealth">
+                    <param id="0" name="Text">EnemyHealth &amp; &quot;/&quot; &amp; EnemyMax</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2982910079238244">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="7408563885878617" type="System" />
+            </conditions>
+            <actions>
+                <action id="-5" name="Set width" sid="5894220281874802" type="RedBar">
+                    <param id="0" name="Width">PlayerHealth / PlayerMax * 100</param>
+                </action>
+                <action id="0" name="Set text" sid="5639716604100216" type="PlayerHealth">
+                    <param id="0" name="Text">PlayerHealth &amp; &quot;/&quot; &amp; PlayerMax</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="Active when it&apos;s the player&apos;s turn" sid="9357041189205051" title="Player Turn">
+            <sub-events>
+                <event-block sid="4067396463359752">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="6960511939794296" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set layer visible" sid="3852796969975315" type="System">
+                            <param id="0" name="Layer">1</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3737982847932707">
+                    <conditions>
+                        <condition id="17" name="On tap object" sid="5683921847746319" type="Touch">
+                            <param id="0" name="Object">ButtonText</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set layer visible" sid="8390423020696349" type="System">
+                            <param id="0" name="Layer">1</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="9300619388098468">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="6426009565694576" type="ButtonText">
+                                    <param id="0" name="Instance variable">Action</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;melee&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="4104464251654861" type="PlayerFight">
+                                    <param id="0" name="Animation">&quot;Sword&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="9798865310475489" type="System">
+                                    <param id="0" name="Seconds">0.7</param>
+                                </action>
+                                <action id="0" name="Call function" sid="6941771307062135" type="Function">
+                                    <param id="0" name="Name">&quot;DamageEnemy&quot;</param>
+                                    <param id="1" name="Parameter {n}">round(random(7, 14))</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="1140231541075248" type="System">
+                                    <param id="0" name="Seconds">0.5</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="221942716305103" type="PlayerFight">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="7630971172562982" type="System">
+                                    <param id="0" name="Variable">Turn</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="4025922253982494">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="136745578137222" type="ButtonText">
+                                    <param id="0" name="Instance variable">Action</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;ranged&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="6642578862569853" type="PlayerFight">
+                                    <param id="0" name="Animation">&quot;Bow&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="9459616275384301" type="System">
+                                    <param id="0" name="Seconds">2</param>
+                                </action>
+                                <action id="0" name="Call function" sid="6105957254408481" type="Function">
+                                    <param id="0" name="Name">&quot;DamageEnemy&quot;</param>
+                                    <param id="1" name="Parameter {n}">round(random(6, 15))</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="1634319148206552" type="PlayerFight">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="7576362348688943" type="System">
+                                    <param id="0" name="Variable">Turn</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="5609284319436627">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="7636653099433151" type="ButtonText">
+                                    <param id="0" name="Instance variable">Action</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;magic&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="2754876408763953" type="System">
+                                    <param id="0" name="Object to create">Fire</param>
+                                    <param id="1" name="Layer">0</param>
+                                    <param id="2" name="X">Slime.X + 20</param>
+                                    <param id="3" name="Y">Slime.Y - 25</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="5133092629657176" type="Fire">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="7622682648624417" type="System">
+                                    <param id="0" name="Seconds">0.6</param>
+                                </action>
+                                <action id="0" name="Call function" sid="6279362826461776" type="Function">
+                                    <param id="0" name="Name">&quot;DamageEnemy&quot;</param>
+                                    <param id="1" name="Parameter {n}">round(random(10, 13))</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="8753282007393551" type="System">
+                                    <param id="0" name="Seconds">0.8</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="6780302296524969" type="Fire" />
+                                <action id="-9" name="Set value" sid="2624947076568922" type="System">
+                                    <param id="0" name="Variable">Turn</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="3869792933941976">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="272919404768366" type="ButtonText">
+                                    <param id="0" name="Instance variable">Action</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;heal&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Wait" sid="3860690498847451" type="System">
+                                    <param id="0" name="Seconds">0.3</param>
+                                </action>
+                                <action id="0" name="Call function" sid="1740963242648244" type="Function">
+                                    <param id="0" name="Name">&quot;HealPlayer&quot;</param>
+                                    <param id="1" name="Parameter {n}">round(random(30, 36))</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="5788101059187446" type="System">
+                                    <param id="0" name="Variable">Turn</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Active when it&apos;s the enemy&apos;s turn" inactive="1" sid="8307336717454789" title="Enemy Turn">
+            <sub-events>
+                <event-block sid="2866491149183013">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="57371761500006" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set layer visible" sid="7586833787590464" type="System">
+                            <param id="0" name="Layer">1</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2485185420219007">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="9757702517982352" type="System" />
+                        <condition id="-14" name="Compare variable" sid="108665016099438" type="System">
+                            <param id="0" name="Variable">EnemyHealth</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="8170490515223209" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="2848323644318635" type="System">
+                            <param id="0" name="Object to create">SnakeBite</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">PlayerFight.X - 45</param>
+                            <param id="3" name="Y">PlayerFight.Y - 20</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="5772289450609964" type="SnakeBite">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="8235296061343466" type="Slime">
+                            <param id="0" name="Animation">&quot;Slime&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="6049839342121173" type="System">
+                            <param id="0" name="Seconds">2</param>
+                        </action>
+                        <action id="0" name="Call function" sid="3140318457360236" type="Function">
+                            <param id="0" name="Name">&quot;DamagePlayer&quot;</param>
+                            <param id="1" name="Parameter {n}">round(random(10, 19))</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="6849477770912506" type="Slime">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="5850453951216932" type="SnakeBite" />
+                        <action id="-16" name="Wait" sid="63050997050136" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="4730569271319326" type="System">
+                            <param id="0" name="Variable">Turn</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="2240171349014725">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="6643955446550172" type="System">
+                    <param id="0" name="Variable">EnemyHealth</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="4328464262840916" type="System">
+                    <param id="0" name="Variable">Turn</param>
+                    <param id="1" name="Value">2</param>
+                </action>
+                <action id="-9" name="Set value" sid="3739390662174608" type="System">
+                    <param id="0" name="Variable">EnemyHealth</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="9293674560569539" type="Won">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="0" name="Set text" sid="4201220906502984" type="Won">
+                    <param id="0" name="Text">&quot;You won!&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="6965809639704106" type="System">
+                    <param id="0" name="Seconds">3</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="8537584272036886" type="System">
+                    <param id="0" name="Layout">Map 1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9967662150049187">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="6076000184411288" type="System">
+                    <param id="0" name="Variable">PlayerHealth</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">PlayerMax</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="5514172422629153" type="System">
+                    <param id="0" name="Variable">PlayerHealth</param>
+                    <param id="1" name="Value">PlayerMax</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1734803815326549">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="7308592448881439" type="System">
+                    <param id="0" name="Variable">PlayerHealth</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="6338150919260847" type="System">
+                    <param id="0" name="Variable">EnemyHealth</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="1077471821305552" type="Won">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="0" name="Set text" sid="815817454121948" type="Won">
+                    <param id="0" name="Text">&quot;You lost.&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="6108432204026864" type="System">
+                    <param id="0" name="Seconds">3</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="9969571679952665" type="System">
+                    <param id="0" name="Layout">Map 1</param>
+                </action>
+                <action id="-37" name="Load" sid="4473030830426717" type="System">
+                    <param id="0" name="Slot">&quot;checkpoint&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="159456529465034">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="5189332639582468" type="Keyboard">
+                    <param id="0" name="Key">27 (Esc)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-14" name="Toggle boolean" sid="2448101547452804" type="Player">
+                    <param id="0" name="Instance variable">Paused</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3808462108200839">
+            <conditions>
+                <condition id="-8" name="Is boolean instance variable set" sid="3480935752064771" type="Player">
+                    <param id="0" name="Instance variable">Paused</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set time scale" sid="5283611430603326" type="System">
+                    <param id="0" name="Time scale">0</param>
+                </action>
+                <action disabled="1" id="-14" name="Set object time scale" sid="6878023405802645" type="System">
+                    <param id="0" name="Object">IsoObject</param>
+                    <param id="1" name="Time scale">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="3604871514403126" type="System">
+                    <param id="0" name="Layer">4</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1105792218564523">
+            <conditions>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="4618165338871997" type="Player">
+                    <param id="0" name="Instance variable">Paused</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set time scale" sid="8363470310292359" type="System">
+                    <param id="0" name="Time scale">1</param>
+                </action>
+                <action disabled="1" id="-14" name="Set object time scale" sid="518532740047726" type="System">
+                    <param id="0" name="Object">IsoObject</param>
+                    <param id="1" name="Time scale">1</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="1537043112289785" type="System">
+                    <param id="0" name="Layer">4</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6670570437826559">
+            <conditions>
+                <condition id="17" name="On tap object" sid="5574153128790038" type="Touch">
+                    <param id="0" name="Object">MenuItem</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="100644217858003">
+                    <conditions>
+                        <condition id="0" name="Compare text" sid="5496035091617347" type="MenuItem">
+                            <param id="0" name="Text to compare">&quot;Resume&quot;</param>
+                            <param id="1" name="Case sensitivity">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="3914957985299271" type="Player">
+                            <param id="0" name="Instance variable">Paused</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1764538748808485">
+                    <conditions>
+                        <condition id="0" name="Compare text" sid="1705024099531742" type="MenuItem">
+                            <param id="0" name="Text to compare">&quot;Menu&quot;</param>
+                            <param id="1" name="Case sensitivity">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="3409855794577697" type="Player">
+                            <param id="0" name="Instance variable">Paused</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-36" name="Save" sid="7779075083515151" type="System">
+                            <param id="0" name="Slot">&quot;menusave&quot;</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="2433950979041079" type="System">
+                            <param id="0" name="Layout">Menu</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9363153318628202">
+                    <conditions>
+                        <condition id="0" name="Compare text" sid="7086833403490027" type="MenuItem">
+                            <param id="0" name="Text to compare">&quot;Options&quot;</param>
+                            <param id="1" name="Case sensitivity">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="9732150261043864" type="Player">
+                            <param id="0" name="Instance variable">Paused</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="2336125140700777" type="System">
+                            <param id="0" name="Layout">Options</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="7007929881506448" type="System">
+                            <param id="0" name="Variable">Source</param>
+                            <param id="1" name="Value">&quot;pause&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5085850918179117">
+                    <conditions>
+                        <condition id="0" name="Compare text" sid="1884645069515559" type="MenuItem">
+                            <param id="0" name="Text to compare">&quot;Quit game&quot;</param>
+                            <param id="1" name="Case sensitivity">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Close" sid="8485389345008825" type="Browser" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="894744715163587">
+            <conditions>
+                <condition id="-8" name="Is boolean instance variable set" sid="3121746874284058" type="Player">
+                    <param id="0" name="Instance variable">Paused</param>
+                </condition>
+                <condition id="-1" name="Every tick" sid="4392212609649584" type="System" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set font color" sid="656377800818652" type="MenuItem">
+                    <param id="0" name="Color">rgb(220, 220, 220)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4317752603178824">
+            <conditions>
+                <condition id="7" name="Cursor is over object" sid="3808995592691522" type="Mouse">
+                    <param id="0" name="Object">MenuItem</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set font color" sid="6051955441977853" type="MenuItem">
+                    <param id="0" name="Color">rgb(255, 255, 255)</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

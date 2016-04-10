@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Menu Events</name>
+    <events>
+        <variable constant="0" name="ShowingCredits" sid="3155142876989985" static="0" type="number">0</variable>
+        <event-block sid="4956602633452395">
+            <conditions>
+                <condition id="17" name="On tap object" sid="944565229958453" type="Touch">
+                    <param id="0" name="Object">MenuItem</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="5781699516035784">
+                    <conditions>
+                        <condition id="0" name="Compare text" sid="4223059798088017" type="MenuItem">
+                            <param id="0" name="Text to compare">&quot;Play&quot;</param>
+                            <param id="1" name="Case sensitivity">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="4520143103890359" type="System">
+                            <param id="0" name="Layout">Map 1</param>
+                        </action>
+                        <action id="-37" name="Load" sid="2296251113253238" type="System">
+                            <param id="0" name="Slot">&quot;checkpoint&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8220771180597635">
+                    <conditions>
+                        <condition id="0" name="Compare text" sid="7673989177532866" type="MenuItem">
+                            <param id="0" name="Text to compare">&quot;Options&quot;</param>
+                            <param id="1" name="Case sensitivity">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="1827092573193163" type="System">
+                            <param id="0" name="Layout">Options</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="1165616980855402" type="System">
+                            <param id="0" name="Variable">Source</param>
+                            <param id="1" name="Value">&quot;menu&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6496506612657833">
+                    <conditions>
+                        <condition id="0" name="Compare text" sid="504934168481612" type="MenuItem">
+                            <param id="0" name="Text to compare">&quot;Quit&quot;</param>
+                            <param id="1" name="Case sensitivity">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Close" sid="2041506713765283" type="Browser" />
+                    </actions>
+                </event-block>
+                <event-block sid="1499422284626902">
+                    <conditions>
+                        <condition id="0" name="Compare text" sid="7432309361526342" type="MenuItem">
+                            <param id="0" name="Text to compare">&quot;Credits&quot;</param>
+                            <param id="1" name="Case sensitivity">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="5774489399537297" type="System">
+                            <param id="0" name="Variable">ShowingCredits</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="5340842599651811">
+            <conditions>
+                <condition id="14" name="On tap" sid="9671753148550045" type="Touch" />
+                <condition id="-14" name="Compare variable" sid="129621217772817" type="System">
+                    <param id="0" name="Variable">ShowingCredits</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="2614662424082593" type="System">
+                    <param id="0" name="Variable">ShowingCredits</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2126571061789475">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="725908702430159" type="System">
+                    <param id="0" name="Variable">ShowingCredits</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="6429022583504876" type="System">
+                    <param id="0" name="Layer">2</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="586636298071812">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="5899775196114337" type="System">
+                    <param id="0" name="Variable">ShowingCredits</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="4917198150343286" type="System">
+                    <param id="0" name="Layer">2</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2388824690148916">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="735240076424532" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="4878683263655285">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="9233500599861519" type="Credits">
+                            <param id="0" name="Unique ID">117</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="5538229352158936" type="Credits">
+                            <param id="0" name="Text">&quot;EngineD was made by Csongor Zih (Daemon)&quot; &amp; newline &amp; &quot;LPC was made by these awesome peope:&quot; &amp; newline &amp;&quot;Lanea Zimmerman (Sharm)&quot; &amp; newline &amp; &quot;Stephen Challener (Redshrike)&quot; &amp; newline &amp; &quot;Charles Sanchez (CharlesGabriel)&quot; &amp; newline &amp; &quot;Manuel Riecke (MrBeast)&quot; &amp; newline &amp; &quot;Daniel Armstrong (HughSpectrum)&quot; &amp; newline &amp; &quot;Daniel Eddeland (Daneeklu)&quot; &amp; newline &amp; &quot;Tuomo Untinen (Reemax)&quot; &amp; newline &amp; &quot;Johannes Sjölund (Wulax)&quot; &amp; newline &amp; &quot;Matthew Krohn&quot; &amp; newline &amp; &quot;Barbara Rivera&quot; &amp; newline &amp; &quot;Casper Nilsson&quot; &amp; newline &amp; &quot;Johann Charlot&quot; &amp; newline &amp; &quot;Chris Phillips&quot; &amp; newline &amp; &quot;William Thompson&quot; </param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6252627278224962">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="5079704506273031" type="Credits">
+                            <param id="0" name="Unique ID">118</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="5821925654534887" type="Credits">
+                            <param id="0" name="Text">&quot;Xenodora&quot; &amp; newline &amp; &quot;Curt&quot; &amp; newline &amp; &quot;Janna&quot; &amp; newline &amp; &quot;Nemisys&quot; &amp; newline &amp; &quot;Hyptosis&quot; &amp; newline &amp; &quot;Jetrel&quot; &amp; newline &amp; &quot;Bluecarrot16&quot; &amp; newline &amp; newline &amp; &quot;This game was made by&quot; &amp; newline &amp; &quot;...&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>
