@@ -580,7 +580,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>90</x>
-                        <y>207</y>
+                        <y>210</y>
                         <z>0</z>
                         <width>26</width>
                         <height>21</height>
@@ -897,7 +897,7 @@
                     <properties>
                         <text>You won!</text>
                         <initial-visibility>Invisible</initial-visibility>
-                        <font>Calibri,-37,700,0</font>
+                        <font>Calibri,-32,700,0</font>
                         <color>255,255,255</color>
                         <horizontal-alignment>Center</horizontal-alignment>
                         <vertical-alignment>Top</vertical-alignment>
@@ -1322,11 +1322,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>16</x>
+                        <x>20</x>
                         <y>80</y>
                         <z>0</z>
                         <width>200</width>
-                        <height>21</height>
+                        <height>20</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -1349,11 +1349,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>16</x>
-                        <y>96</y>
+                        <x>20</x>
+                        <y>100</y>
                         <z>0</z>
                         <width>200</width>
-                        <height>21</height>
+                        <height>20</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -1376,11 +1376,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>16</x>
-                        <y>112</y>
+                        <x>20</x>
+                        <y>120</y>
                         <z>0</z>
                         <width>200</width>
-                        <height>21</height>
+                        <height>20</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -1403,11 +1403,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>16</x>
-                        <y>128</y>
+                        <x>20</x>
+                        <y>140</y>
                         <z>0</z>
                         <width>200</width>
-                        <height>21</height>
+                        <height>20</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>

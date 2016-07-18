@@ -40,6 +40,20 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="8915784359779128">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="327052746812229" type="System">
+                            <param id="0" name="Variable">Source</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;fight&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="9686962676300911" type="System">
+                            <param id="0" name="Layout">Fight</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-block>
     </events>

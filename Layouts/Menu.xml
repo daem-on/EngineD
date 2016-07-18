@@ -177,7 +177,7 @@
                 </instance>
                 <instance type="SeamlessText" uid="120">
                     <properties>
-                        <text>Powered by EngineD. Uses LPC.</text>
+                        <text>Powered by EngineD Uses LPC</text>
                         <initial-visibility>Visible</initial-visibility>
                         <font>Calibri Light,-12,300,0</font>
                         <color>234,234,234</color>

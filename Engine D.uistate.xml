@@ -10,13 +10,13 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout order="0">Map 1</layout>
+        <layout active="1" order="0">Map 1</layout>
         <layout order="3">Fight</layout>
         <layout order="5">Menu</layout>
         <layout order="7">Options</layout>
-        <event-sheet order="2">Base</event-sheet>
-        <event-sheet active="1" order="4">Fight Events</event-sheet>
         <event-sheet order="1">Sheet 1</event-sheet>
+        <event-sheet order="2">Base</event-sheet>
+        <event-sheet order="4">Fight Events</event-sheet>
         <event-sheet order="6">Menu Events</event-sheet>
         <event-sheet order="8">Options Events</event-sheet>
     </open-tabs>
@@ -71,5 +71,6 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/Collision/" />
         <folder expanded="1" path="animation-folder/Read/" />
         <folder expanded="1" path="animation-folder/DarkBack/" />
+        <folder expanded="1" path="animation-folder/Sky/" />
     </folders-expanded>
 </c2uistate>

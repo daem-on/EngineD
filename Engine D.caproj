@@ -2,11 +2,11 @@
 <c2project>
     <name>Engine D</name>
     <description></description>
-    <version>1.0.0.0</version>
+    <version>Beta 0.1.3</version>
     <author></author>
     <author-email></author-email>
     <author-website>http://</author-website>
-    <app-id>com.mycompany.myapp</app-id>
+    <app-id>com.daemons.engined</app-id>
     <unique-id>7mctnrswfrs9</unique-id>
     <saved-with-version>20900</saved-with-version>
     <used-plugins>
@@ -19,6 +19,7 @@
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="Tilemap" version="1">Tilemap</plugin>
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
+        <plugin author="Scirra" id="XML" version="1">XML</plugin>
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
@@ -28,7 +29,9 @@
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
-    <used-effects />
+    <used-effects>
+        <effect author="Viktor Korsun" id="water">Water</effect>
+    </used-effects>
     <configurations>
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
     </configurations>
@@ -37,7 +40,8 @@
         <height>300</height>
     </window-size>
     <pixel-rounding>0</pixel-rounding>
-    <preview-effects>1</preview-effects>
+    <preview-effects>0</preview-effects>
+    <first-layout>Menu</first-layout>
     <use-loader-layout>0</use-loader-layout>
     <configuration-settings>
         <prop name="Clear background">Yes</prop>
@@ -1576,6 +1580,17 @@
                     <behavior id="Fade" />
                 </behavior-type>
             </behaviors>
+        </object-type>
+        <object-type name="Sky" sid="4569315514575784">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3301007836860979" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.501887" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type global="1" name="XML" sid="3999593242279692">
+            <plugin id="XML" />
         </object-type>
     </object-folder>
     <families>
